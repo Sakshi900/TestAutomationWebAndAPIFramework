@@ -5,7 +5,7 @@
     </listeners>
     <test name="UI and API">
         <classes>
-<!--            <class name="com.tests.ui.CheckersTest"/>-->
+            <class name="com.tests.ui.CheckersTest"/>
             <class name="com.tests.api.CardGameApiTest"/>
         </classes>
     </test>
