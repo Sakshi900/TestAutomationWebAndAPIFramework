@@ -94,6 +94,7 @@ public class CheckersTest extends BaseTest {
     }
     @Test(description = "E2E Checkers flow with dynamic move discovery", groups = {"ui"})
     public void checkersE2EFlow_Optimized() throws InterruptedException {
+        helper.refreshBrowser();
         Allure.step("Confirm the site is up");
         Assert.assertTrue(page.isLoaded(), "Checkers page did not load");
         Assert.assertEquals(page.getStatusText(), "Select an orange piece to move.", "Initial Status");

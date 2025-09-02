@@ -128,4 +128,8 @@ public class SeleniumHelper {
         wait.until(ExpectedConditions.textToBe(locator, finalText));
     }
 
+    public void refreshBrowser(){
+        driver.manage().window().maximize();
+    }
+
 }
