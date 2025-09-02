@@ -1,5 +1,6 @@
 package com.tests.api;
 
+import com.utils.BlackjackUtil;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -25,7 +26,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class CardGameApiTest {
 
     private static final String BASE = "https://deckofcardsapi.com/api/deck";
-
+    BlackjackUtil blackjackUtil = new BlackjackUtil();
     @Test(description = "Get new deck, shuffle, deal three to two players, check Blackjack")
     @Severity(SeverityLevel.CRITICAL)
     public void blackjackFlow() {
@@ -34,7 +35,7 @@ public class CardGameApiTest {
         String newDeckUrl = BASE + "/new/";
         String shuffleNewUrl = BASE + "/new/shuffle/?deck_count=1";
 
-        // Site up check (200)
+        // if Site is up: return 200
         given().when().get(newDeckUrl).then().statusCode(200);
 
         // Get a new deck + shuffle
@@ -53,16 +54,16 @@ public class CardGameApiTest {
 
         // Draw 3 cards for player1
         JsonPath p1 = draw(deckId, 3).jsonPath();
-        System.out.println(p1.prettify());
         // Draw 3 cards for player2
         JsonPath p2 = draw(deckId, 3).jsonPath();
-        System.out.println(p2.prettify());
 
         List<String> v1 = p1.getList("cards.value");
+        System.out.println(v1);
         List<String> v2 = p2.getList("cards.value");
+        System.out.println(v2);
 
-        int t1 = com.utils.BlackjackUtil.totalValue(v1);
-        int t2 = com.utils.BlackjackUtil.totalValue(v2);
+        int t1 = BlackjackUtil.totalValue(v1);
+        int t2 = BlackjackUtil.totalValue(v2);
 
         Allure.step("P1: " + v1 + " => " + t1);
         Allure.step("P2: " + v2 + " => " + t2);
