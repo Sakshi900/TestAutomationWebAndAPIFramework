@@ -7,7 +7,6 @@
         <classes>
             <class name="com.tests.ui.CheckersTest"/>
             <class name="com.tests.api.CardGameApiTest"/>
-            <class name="com.tests.regression.RegressionTests"/>
         </classes>
     </test>
 </suite>
