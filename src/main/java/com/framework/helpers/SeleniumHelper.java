@@ -129,6 +129,7 @@ public class SeleniumHelper {
     }
 
     public void refreshBrowser(){
+        WebDriver driver = DriverFactory.getDriver();
         driver.manage().window().maximize();
     }
 
