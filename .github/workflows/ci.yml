@@ -5,6 +5,11 @@ on:
     branches: [ main, master ]
   pull_request:
 
+permissions:
+  contents: write    # required to push to gh-pages
+  pages: write       # required for GitHub Pages
+  id-token: write    # required for GitHub Pages
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
