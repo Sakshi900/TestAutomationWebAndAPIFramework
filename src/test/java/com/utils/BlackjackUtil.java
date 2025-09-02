@@ -18,8 +18,7 @@ public class BlackjackUtil {
         }
     }
 
-    /** Compute total using Ace as 11 unless it busts */
-    public static int total(List<String> values) {
+    public static int totalValue(List<String> values) {
         int sum = 0;
         int aces = 0;
         for (String v : values) {
@@ -35,6 +34,6 @@ public class BlackjackUtil {
     }
 
     public static boolean isBlackjack21(List<String> values) {
-        return total(values) == 21;
+        return totalValue(values) == 21;
     }
 }

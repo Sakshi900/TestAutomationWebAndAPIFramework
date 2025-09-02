@@ -53,14 +53,16 @@ public class CardGameApiTest {
 
         // Draw 3 cards for player1
         JsonPath p1 = draw(deckId, 3).jsonPath();
+        System.out.println(p1.prettify());
         // Draw 3 cards for player2
         JsonPath p2 = draw(deckId, 3).jsonPath();
+        System.out.println(p2.prettify());
 
         List<String> v1 = p1.getList("cards.value");
         List<String> v2 = p2.getList("cards.value");
 
-        int t1 = com.utils.BlackjackUtil.total(v1);
-        int t2 = com.utils.BlackjackUtil.total(v2);
+        int t1 = com.utils.BlackjackUtil.totalValue(v1);
+        int t2 = com.utils.BlackjackUtil.totalValue(v2);
 
         Allure.step("P1: " + v1 + " => " + t1);
         Allure.step("P2: " + v2 + " => " + t2);
