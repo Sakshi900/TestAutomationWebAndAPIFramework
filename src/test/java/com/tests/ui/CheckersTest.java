@@ -15,7 +15,7 @@ import java.util.List;
 @Feature("Checkers UI")
 public class CheckersTest extends BaseTest {
 
-    private CheckersPage page;
+     CheckersPage page = new CheckersPage();
     SeleniumHelper helper = new SeleniumHelper();
 
     @BeforeMethod(alwaysRun = true)
