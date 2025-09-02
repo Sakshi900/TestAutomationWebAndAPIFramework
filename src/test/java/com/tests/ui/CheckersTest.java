@@ -93,7 +93,7 @@ public class CheckersTest extends BaseTest {
                 " Reset failed: space40 does not contain orange piece after restart");
     }
 
-    @Test(description = "E2E Checkers flow with dynamic move discovery", groups = {"Regression"})
+    @Test(description = "E2E Checkers flow with dynamic move discovery", groups = {"ui"})
     public void checkersE2EFlow_Optimized() throws InterruptedException {
         page = new CheckersPage();
 
