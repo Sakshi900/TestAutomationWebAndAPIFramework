@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Tue Sep 02 14:59:25 UTC 2025","Tue Sep 02 14:59:25 UTC 2025","64","Suite","UI and API","com.tests.ui.CheckersTest","com.tests.ui.CheckersTest","checkersFlow","Confirm site is up, make moves, and restart",""
+"passed","Tue Sep 02 14:59:16 UTC 2025","Tue Sep 02 14:59:19 UTC 2025","2281","Suite","UI and API","com.tests.api.CardGameApiTest","com.tests.api.CardGameApiTest","blackjackFlow","Get new deck, shuffle, deal three to two players, check Blackjack",""
