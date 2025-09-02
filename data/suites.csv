@@ -1,4 +1,4 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Sep 02 22:40:15 UTC 2025","Tue Sep 02 22:40:20 UTC 2025","4225","Suite","UI and API","com.tests.api.CardGameApiTest","com.tests.api.CardGameApiTest","blackjackFlow","Get new deck, shuffle, deal three to two players, check Blackjack",""
-"broken","Tue Sep 02 22:40:38 UTC 2025","Tue Sep 02 22:40:38 UTC 2025","1","Suite","UI and API","com.tests.ui.CheckersTest","com.tests.ui.CheckersTest","checkersE2EFlow_Optimized","E2E Checkers flow with dynamic move discovery",""
-"passed","Tue Sep 02 22:40:38 UTC 2025","Tue Sep 02 22:40:58 UTC 2025","20092","Suite","UI and API","com.tests.ui.CheckersTest","com.tests.ui.CheckersTest","checkersE2EFlow","E2E Checkers flow with status change assertions",""
+"passed","Tue Sep 02 22:43:54 UTC 2025","Tue Sep 02 22:44:14 UTC 2025","19965","Suite","UI and API","com.tests.ui.CheckersTest","com.tests.ui.CheckersTest","checkersE2EFlow","E2E Checkers flow with status change assertions",""
+"passed","Tue Sep 02 22:43:44 UTC 2025","Tue Sep 02 22:43:47 UTC 2025","3178","Suite","UI and API","com.tests.api.CardGameApiTest","com.tests.api.CardGameApiTest","blackjackFlow","Get new deck, shuffle, deal three to two players, check Blackjack",""
+"broken","Tue Sep 02 22:43:44 UTC 2025","Tue Sep 02 22:43:44 UTC 2025","14","Suite","UI and API","com.tests.regression.RegressionTests","com.tests.regression.RegressionTests","checkersE2EFlow_Optimized","E2E Checkers flow with dynamic move discovery",""
