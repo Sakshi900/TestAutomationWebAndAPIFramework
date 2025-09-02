@@ -11,7 +11,7 @@ public class BaseTest {
     @BeforeClass(alwaysRun = true)
     public void setUp() {
         DriverFactory.initDriver();
-        DriverFactory.getDriver().get("https://www.gamesforthebrain.com/game/checkers/");
+        DriverFactory.getDriver().get(TestConfig.baseUrl());
     }
 
     @AfterClass(alwaysRun = true)
