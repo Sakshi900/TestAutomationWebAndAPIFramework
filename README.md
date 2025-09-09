@@ -6,7 +6,7 @@
 mvn clean test
 
 ### Run with System properties
-ea clean test -Denvironment=qa -Dbrowser=firefox -Dheadless=true
+mvn clean test -Denvironment=qa -Dbrowser=firefox -Dheadless=true
 
 ```
 

@@ -3,11 +3,15 @@ package com.framework.pages.checkers;
 import com.framework.driver.DriverFactory;
 import com.framework.helpers.SeleniumHelper;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CheckersPage {
+    private static final Logger log = LoggerFactory.getLogger(CheckersPage.class);
     private final SeleniumHelper helper = new SeleniumHelper();
 
     private final By restartLink = By.linkText("Restart...");
@@ -62,7 +66,7 @@ public class CheckersPage {
                             .getAttribute("src");
                     if (src != null && src.contains("you1.gif")) { // orange piece found
                         orangePieces.add(new Space(row, col));
-                        System.out.println("Found orange piece at " + spaceName + " (row=" + row + ", col=" + col + ")");
+                        log.info("Found orange piece at " + spaceName + " (row=" + row + ", col=" + col + ")");
                     }
                 } catch (Exception e) {
                     // ignore elements not found
@@ -93,7 +97,7 @@ public class CheckersPage {
 
                 if (isGray(toSpaceName)) {
                     validMoves.add(new Move(orangePieceSpace.name, toSpaceName, false));
-                    System.out.println("  Added normal move: " + orangePieceSpace.name + " -> " + toSpaceName);
+                    log.info("  Added normal move: " + orangePieceSpace.name + " -> " + toSpaceName);
                 }
             }
 
@@ -119,7 +123,7 @@ public class CheckersPage {
                 // - Destination is empty (gray)
                 if (isBlue(midSpaceName) && isGray(toSpaceName)) {
                     validMoves.add(new Move(orangePieceSpace.name, toSpaceName, true));
-                    System.out.println("  Added capture move: " + orangePieceSpace.name + " -> " + toSpaceName + " capturing " + midSpaceName);
+                   log.info("  Added capture move: " + orangePieceSpace.name + " -> " + toSpaceName + " capturing " + midSpaceName);
                 }
             }
         }
@@ -157,4 +161,10 @@ public class CheckersPage {
             return false;
         }
     }
+    public int getPiecesCount(String srcValue) {
+        By locator = By.xpath("//img[contains(@src,'" + srcValue + "')]");
+        List<WebElement> elements = helper.findAll(locator);
+        return elements.size();
+    }
+
 }
