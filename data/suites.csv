@@ -1,3 +1,3 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Sep 09 15:50:21 UTC 2025","Tue Sep 09 15:50:24 UTC 2025","2898","Suite","UI and API","com.tests.api.CardGameApiTest","com.tests.api.CardGameApiTest","blackjackFlow","Get new deck, shuffle, deal three to two players, check Blackjack",""
-"passed","Tue Sep 09 15:50:35 UTC 2025","Tue Sep 09 15:50:59 UTC 2025","24016","Suite","UI and API","com.tests.ui.CheckersTest","com.tests.ui.CheckersTest","checkersE2EFlow_Optimized","E2E Checkers flow with dynamic move discovery",""
+"passed","Tue Sep 09 16:17:07 UTC 2025","Tue Sep 09 16:17:09 UTC 2025","2785","Suite","UI and API","com.tests.api.CardGameApiTest","com.tests.api.CardGameApiTest","blackjackFlow","Get new deck, shuffle, deal three to two players, check Blackjack",""
+"passed","Tue Sep 09 16:17:28 UTC 2025","Tue Sep 09 16:17:52 UTC 2025","24333","Suite","UI and API","com.tests.ui.CheckersTest","com.tests.ui.CheckersTest","checkersE2EFlow_Optimized","E2E Checkers flow with dynamic move discovery",""
