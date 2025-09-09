@@ -30,7 +30,7 @@ public class CheckersTest extends BaseTest {
         Allure.step("Confirm the site is up");
         Assert.assertTrue(page.isLoaded(), "Checkers page did not load");
         Assert.assertEquals(page.getStatusText(), "Select an orange piece to move.", "Initial Status");
-        int beforeStartingOrangeMoves, beforeStartingBlueMoves;
+        int beforeStartingOrangeMoves;
         beforeStartingOrangeMoves = page.getPiecesCount("you1.gif");
         for (int i = 1; i <= 5; i++) {
             List<Move> moves = page.getValidOrangeMoves();
@@ -59,11 +59,14 @@ public class CheckersTest extends BaseTest {
             Assert.assertTrue(moveDone, "No valid orange move succeeded in turn " + i);
             Assert.assertEquals(page.getStatusText(), "Make a move.", "Status mismatch after move " + i);
         }
-        int afterRestartingOrangeMoves, afterRestartingBlueMoves;
+        int afterRestartingOrangeMoves;
         afterRestartingOrangeMoves = page.getPiecesCount("you1.gif");
         Allure.step("Restart the game");
+        Assert.assertNotEquals(beforeStartingOrangeMoves,afterRestartingOrangeMoves);
         page.restart();
         Assert.assertNotEquals(beforeStartingOrangeMoves,afterRestartingOrangeMoves);
+        Assert.assertEquals(page.getPiecesCount("you1.gif"), 12, "Orange pieces should be 12 after restart");
+        Assert.assertEquals(page.getPiecesCount("me1.gif"), 12, "Blue pieces should be 12 after restart");
         Assert.assertEquals(page.getStatusText(), "Select an orange piece to move.", "Status after restart mismatch");
     }
 

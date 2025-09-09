@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CheckersPage {
     private static final Logger log = LoggerFactory.getLogger(CheckersPage.class);
@@ -16,6 +17,7 @@ public class CheckersPage {
 
     private final By restartLink = By.linkText("Restart...");
     private final By statusMessage = By.cssSelector("#message");
+    private By boardPieces = By.xpath("//div[@class='line']//img");
 
     private final int boardSize = 8;
 
@@ -29,6 +31,8 @@ public class CheckersPage {
 
     public void restart() {
         helper.click(restartLink);
+        helper.waitForPageLoad();
+
     }
 
     public void moveByName(String from, String to) throws InterruptedException {
@@ -162,7 +166,7 @@ public class CheckersPage {
         }
     }
     public int getPiecesCount(String srcValue) {
-        By locator = By.xpath("//img[contains(@src,'" + srcValue + "')]");
+        By locator = By.xpath("//img[contains(@src,'" + srcValue + "') and @onclick]");
         List<WebElement> elements = helper.findAll(locator);
         return elements.size();
     }

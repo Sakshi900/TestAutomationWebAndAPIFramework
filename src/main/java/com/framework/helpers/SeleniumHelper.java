@@ -2,6 +2,7 @@ package com.framework.helpers;
 
 import com.framework.driver.DriverFactory;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -116,12 +117,9 @@ public class SeleniumHelper {
     public void waitForTurn(By locator, String finalText) {
         WebDriver driver = DriverFactory.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-
-        // Optional transient state: "Please wait."
         try {
             wait.until(ExpectedConditions.textToBe(locator, "Please wait."));
         } catch (Exception e) {
-            // ignore if it never appeared
         }
 
         // Then wait until it becomes the expected final text
@@ -132,5 +130,12 @@ public class SeleniumHelper {
         WebDriver driver = DriverFactory.getDriver();
         driver.manage().window().maximize();
     }
+    public void waitForPageLoad() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        ExpectedCondition<Boolean> pageLoadCondition = wd ->
+                ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete");
+        wait.until(pageLoadCondition);
+    }
 
+    // Already existing helper methods like findAll() ...
 }
